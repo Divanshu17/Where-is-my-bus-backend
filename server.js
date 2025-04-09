@@ -6,6 +6,7 @@ const userRoutes = require('./routes/userRoutes');
 const testRoutes = require('./routes/testRoutes');
 const seatRoutes = require('./routes/seatRoutes');
 const ticketRoutes = require('./routes/ticketRoutes');
+const feedbackRoutes = require('./routes/feedbackRoutes'); // Add this line
 
 // Load environment variables
 dotenv.config();
@@ -39,6 +40,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/test', testRoutes);
 app.use('/api/seats', seatRoutes);
 app.use('/api/tickets', ticketRoutes);
+app.use('/api/feedback', feedbackRoutes); // Add this line
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -49,4 +51,4 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-}); 
+});
